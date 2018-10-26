@@ -40,7 +40,7 @@ cp /etc/redis/redis.conf "${HOME}/redis"
 
 #give it a password
 echo "requirepass ${REDIS_PASSWORD}" >> $HOME/redis/redis.conf
-
+sed -i 's/databases 1/databases 2'
 sed -i 's+/var/run/redis/redis-server.pid+/home/rof/redis/redis-server.pid+' "${REDIS_CONF}"
 sed -i 's+/var/log/redis/redis-server.log+/home/rof/redis/redis-server.log+' "${REDIS_CONF}"
 sed -i 's+/var/lib/redis+/home/rof/redis+' "${REDIS_CONF}"
